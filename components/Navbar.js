@@ -1,8 +1,9 @@
 import Link from 'next/link';
+import { useContext } from 'react';
+import { UserContext } from '../lib/context';
 
 export default function Navbar () {
-    const user = null;
-    const username = null;
+    const { user, username } = useContext(UserContext);
 
     return (
         <nav className="navbar">
@@ -23,7 +24,7 @@ export default function Navbar () {
                         </li>
                         <li>
                             <Link href={`/${username}`} passHref>
-                                <img src={user?.photoURL} />
+                                <img src={user?.photoURL} alt="user photo" />
                             </Link>
                         </li>
                     </>
